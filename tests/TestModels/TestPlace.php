@@ -53,6 +53,7 @@ class TestPlace extends Model
     'multi_polygon' => MultiPolygon::class,
     'geometry_collection' => GeometryCollection::class,
     'point_with_line_string_cast' => LineString::class,
+    'point_with_srid' => Point::class,
   ];
 
   /**

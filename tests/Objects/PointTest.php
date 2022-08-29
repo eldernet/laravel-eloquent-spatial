@@ -25,6 +25,15 @@ it('creates a model record with point with SRID', function (): void {
   expect($testPlace->point->srid)->toBe(4326);
 });
 
+it('creates a model record that has a column with SRID defined using point with SRID', function (): void {
+  $point = new Point(-43.5309, 172.6365, 4326);   // Christchurch, New Zealand
+
+  /** @var TestPlace $testPlace */
+  $testPlace = TestPlace::factory()->create(['point_with_srid' => $point]);
+
+  expect($testPlace->point_with_srid)->toEqual($point);
+});
+
 it('creates point from JSON', function (): void {
   $point = new Point(180, 0);
 
